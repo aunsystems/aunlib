@@ -7,7 +7,7 @@
 ## 🔗 Live Site
 
 Visit the ∿Lib homepage at:  
-👉 **[https://YOUR_USERNAME.github.io/aunlib](https://YOUR_USERNAME.github.io/aunlib)**
+👉 **[https://aunsystems.github.io/aunlib](https://aunsystems.github.io/aunlib)**
 
 ---
 
