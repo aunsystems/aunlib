@@ -48,4 +48,7 @@ Edit
 ## 🧠 Contact
 
 Developed by **Aun Systems™**  
-For collaboration or inquiry: [YOUR CONTACT LINK]
+## 🧠 Contact
+
+Developed by **Aun Systems™**  
+For collaboration or inquiry: [halifaxjerrykatz@gmail.com](mailto:halifaxjerrykatz@gmail.com)
