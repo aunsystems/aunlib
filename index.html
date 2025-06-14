@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<!-- Trigger rebuild -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" conten
-    t="width=device-width, initial-scale=1">
-  <title>∿Lib: Symbolic Cryptographic Filtering</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>∿Lib | Collapse Logic in Post-Quantum Cryptography</title>
   <style>
     body {
       font-family: sans-serif;
       margin: 3em;
       background: #f9f9f9;
       color: #222;
+      line-height: 1.6;
     }
-    h1 {
-      font-size: 2em;
+    h1, h2, h3 {
       color: #111;
     }
     a {
@@ -24,33 +22,138 @@
     a:hover {
       text-decoration: underline;
     }
-    .links {
-      margin-top: 2em;
+    code {
+      background: #eee;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 1em;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      text-align: left;
+    }
+    hr {
+      margin: 3em 0;
+    }
+    .toc {
+      background: #fff;
+      padding: 1em;
+      border: 1px solid #ddd;
+      margin-bottom: 2em;
     }
   </style>
 </head>
 <body>
   <h1>∿Lib</h1>
-  <p><strong>∿Lib</strong> is a prototype library for symbolic cryptographic filtering based on the Aun Operator (∿), designed for post-quantum threat models and collapse-based logic structures.</p>
+  <p><strong>Collapse Logic in Post-Quantum Cryptography<br>
+  A Symbolic Filtering Layer Using the Aun Operator (∿)</strong><br>
+  <em>Jerry Katz | Aun Systems™</em></p>
 
-  <div class="links">
-    <h2>Repository Structure</h2>
-    <ul>
-      <ul>
-<ul>
-  <li><a href="https://github.com/aunsystems/aunlib/tree/main/lib" target="_blank">/lib</a> – Core symbolic filtering engine</li>
-  <li><a href="https://github.com/aunsystems/aunlib/tree/main/examples" target="_blank">/examples</a> – Code examples and usage</li>
-  <li><a href="https://github.com/aunsystems/aunlib/tree/main/docs" target="_blank">/docs</a> – Documentation and theory</li>
-  <li><a href="https://github.com/aunsystems/aunlib/tree/main/tests" target="_blank">/tests</a> – Testing suite</li>
-  <li><a href="https://github.com/aunsystems/aunlib/tree/main/arxiv" target="_blank">/arxiv</a> – Whitepaper, benchmark data, and ROC curves</li>
-</ul>
+  <hr />
 
+  <h2>Abstract</h2>
+  <p>This paper introduces a symbolic collapse operator, ∿, as a logic-based meta-layer to enhance post-quantum cryptographic resilience. Inspired by nonduality philosophy and structured collapse logic, ∿ acts as a semantic filter for key validation and adversarial detection. We present the operator’s formal definition, threat model, implementation design, and empirical results. Benchmarks show ∿ provides detectable security improvements in keypair mimicry resistance, with negligible performance impact. This positions ∿ as a logic-layer adjunct to existing post-quantum cryptographic systems.</p>
 
-</ul>
+  <h2>1. Introduction</h2>
+  <p>While post-quantum cryptography (PQC) focuses on mathematically secure primitives, it often assumes trust in binary validation systems. The ∿ operator challenges this assumption by introducing a collapse gate: a symbolic filter that nullifies keys or inputs exhibiting mirrored, inverse, or structurally mimicked patterns. The idea originates from nonduality—a philosophy that denies oppositional dualism—and applies this as a logic constraint in security protocols.</p>
 
-    </ul>
-  </div>
+  <h2>2. Formal Definition of the ∿ Operator</h2>
+  <p>Let A, B ∈ {0,1}ⁿ. We define:</p>
+  <ul>
+    <li>H(A, B) = Hamming distance</li>
+    <li>S(A, B) = structural similarity score across pattern transforms</li>
+  </ul>
 
-  <p>Visit the full repository on <a href="https://github.com/YOUR_USERNAME/aunlib" target="_blank">GitHub</a>.</p>
+  <p>Then:</p>
+  <pre><code>∿(A, B) = ∅  if H(A, B) &lt; T and S(A, B) &gt; S_min
+         A ⊕ B  otherwise</code></pre>
+
+  <p>Where:</p>
+  <ul>
+    <li>T = Hamming threshold</li>
+    <li>S_min = minimum similarity score</li>
+  </ul>
+
+  <p>Transform weights:</p>
+  <ul>
+    <li>Identity: 1.0</li>
+    <li>Reverse: 0.8</li>
+    <li>XOR-FF: 0.6</li>
+    <li>Rotate (left/right): 0.5</li>
+  </ul>
+
+  <h2>3. Threat Model</h2>
+  <p>The ∿ system is designed to resist:</p>
+  <ul>
+    <li>Mirrored keypair attacks</li>
+    <li>Adversarial AI-based key mimicry</li>
+    <li>Structural approximation of secrets</li>
+  </ul>
+
+  <p>Attackers may:</p>
+  <ul>
+    <li>Know target keys</li>
+    <li>Attempt to invert or replicate valid public inputs</li>
+    <li>Use adaptive patterns based on known detection logic</li>
+  </ul>
+
+  <h2>4. Implementation and Integration</h2>
+  <p><strong>Key Derivation:</strong><br>
+  A keypair is rejected if: <code>∿(new_key, known_key) = ∅</code></p>
+
+  <p><strong>Authentication:</strong><br>
+  Response <code>R</code> is accepted only if: <code>∿(C, R) ≠ ∅</code>, where <code>C</code> is the challenge.</p>
+
+  <h2>5. Experimental Evaluation</h2>
+  <p><strong>Parameter Sweep:</strong><br>
+  Tested across:
+  <ul>
+    <li>T ∈ [1, 8]</li>
+    <li>S_min ∈ [0.1, 0.9]</li>
+  </ul>
+  Optimal performance at <code>T = 6</code>, <code>S_min = 0.3–0.5</code></p>
+
+  <p><strong>Adversarial Testing:</strong></p>
+  <ul>
+    <li>Full mirror</li>
+    <li>Partial flip (15%)</li>
+    <li>XOR pattern</li>
+    <li>Compound transforms</li>
+  </ul>
+
+  <p>ROC analysis shows AUC &gt; 0.85, validating symbolic detection power.</p>
+
+  <h2>6. Performance Results</h2>
+  <table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Avg eval time</td><td>2.15 ms</td></tr>
+    <tr><td>Collapse evals</td><td>5,000</td></tr>
+    <tr><td>Runtime</td><td>10.7s total</td></tr>
+    <tr><td>Memory usage</td><td>9.3 MB</td></tr>
+  </table>
+
+  <h2>7. Comparative Considerations</h2>
+  <p>While traditional PQC relies on structural hardness, ∿ adds logic-level pattern recognition that:</p>
+  <ul>
+    <li>Nullifies dualism-based attacks</li>
+    <li>Adds symbolic entropy</li>
+    <li>Acts orthogonally to math-based cryptographic hardness</li>
+  </ul>
+
+  <h2>8. Limitations and Future Work</h2>
+  <ul>
+    <li>Current model uses fixed transforms; ML-based evasion not yet modeled</li>
+    <li>Requires real-world testing with PQC suites like CRYSTALS-Dilithium</li>
+    <li>Future: symbolic integration with zk-SNARKs and MPC protocols</li>
+  </ul>
+
+  <h2>9. Conclusion</h2>
+  <p>∿ is a symbolic operator rooted in nonduality and collapse logic. When applied to cryptographic systems, it acts as a resilient, pattern-sensitive filter. Our work shows it is computationally lightweight, empirically testable, and conceptually novel. As a logic-layer defense, ∿ may prove valuable in securing systems against adversaries capable of semantic mimicry or adaptive AI attacks.</p>
+
 </body>
 </html>
