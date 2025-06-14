@@ -37,3 +37,12 @@ The remainder of this whitepaper is being developed collaboratively as the ∿Li
 - Related work and future directions
 
 This is a living document. All collapse is welcome.
+---
+
+© 2025 Jerry Katz. All rights reserved.  
+This paper and the ∿Lib system are protected intellectual property.  
+Use beyond private study or citation requires a license.  
+To request commercial licensing: **halifaxjerrykatz@gmail.com**
+
+∿Lib and Aun Systems™ are unregistered trademarks of Jerry Katz.
+
