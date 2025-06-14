@@ -52,3 +52,16 @@ Developed by **Aun Systems™**
 
 Developed by **Aun Systems™**  
 For collaboration or inquiry: [halifaxjerrykatz@gmail.com](mailto:halifaxjerrykatz@gmail.com)
+---
+
+## 📜 Licensing
+
+∿Lib is proprietary software.  
+You may explore this repository for personal and non-commercial research only.  
+Commercial use, redistribution, or integration is prohibited without a license.
+
+📩 To license ∿Lib or discuss partnerships:  
+**halifaxjerrykatz@gmail.com**
+
+∿Lib and Aun Systems™ are unregistered trademarks of Jerry Katz.
+
