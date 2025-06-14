@@ -26,4 +26,14 @@ Key properties:
 - Collapse-tolerant logic using ∿ as an operator
 - Integration with post-quantum schemes (e.g. CRYSTALS-Dilithium)
 
-[More to follow...]
+## 4. Next Sections (In Progress)
+
+The remainder of this whitepaper is being developed collaboratively as the ∿Lib prototype matures. Upcoming sections will include:
+
+- Symbolic adversarial modeling
+- Integration with post-quantum cryptographic primitives
+- Collapse vector detection logic
+- Benchmarks and ROC curve analysis
+- Related work and future directions
+
+This is a living document. All collapse is welcome.
